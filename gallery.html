@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画廊 —— 青聪泉画作展</title>
+  <meta name="description" content="浏览青聪泉自闭症儿童的全部绘画作品，可按分类与作者筛选，发现属于每个孩子的色彩世界。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 导航栏 ========== -->
+  <nav class="site-nav">
+    <div class="container">
+      <a class="nav-logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2 19 13 30 16 19 19 16 30 13 19 2 16 13 13Z" fill="#3498DB"/>
+        </svg>
+        <span data-site-text="name">青聪泉画作展</span>
+      </a>
+      <button class="nav-toggle" aria-label="打开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="gallery.html" class="is-active">画廊</a></li>
+        <li><a href="about.html">关于</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== 页头 ========== -->
+    <header class="page-head">
+      <h1>画廊</h1>
+      <p>每一幅画，都是一个孩子认真讲述的故事</p>
+    </header>
+
+    <div class="container">
+      <!-- ========== 筛选栏 ========== -->
+      <div class="filter-bar">
+        <!-- 分类胶囊按钮，由 gallery.js 填充（含「全部」） -->
+        <div class="filter-group" id="category-filter"></div>
+        <!-- 作者下拉，由 gallery.js 填充选项 -->
+        <select class="filter-select" id="author-filter" aria-label="按作者筛选">
+          <option value="全部">全部作者</option>
+        </select>
+      </div>
+
+      <!-- ========== 画作瀑布流 ========== -->
+      <div class="masonry" id="gallery-grid">
+        <p class="state-msg">正在加载作品…</p>
+      </div>
+
+      <!-- 空状态 -->
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="emoji">🎨</span>
+        <p>这个筛选条件下还没有作品，换一个试试看吧。</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 data-site-text="name">青聪泉画作展</h3>
+          <p data-site-text="slogan">每一笔，都是星星的语言</p>
+        </div>
+        <div class="footer-col">
+          <h3>浏览</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="gallery.html">画廊</a></li>
+            <li><a href="about.html">关于我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>联系我们</h3>
+          <p>邮箱：<a href="mailto:info@qcq.org.cn" data-site-text="contact.email" data-site-mailto="contact.email">info@qcq.org.cn</a></p>
+          <p>电话：<span data-site-text="contact.phone">021-5888-XXXX</span></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 上海市青聪泉儿童智能训练中心 · 由青聪泉志愿者团队搭建</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

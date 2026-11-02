@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>青聪泉画作展 —— 每一笔，都是星星的语言</title>
+  <meta name="description" content="青聪泉画作展，展示上海青聪泉自闭症儿童的绘画艺术作品。每一幅画，都是孩子们想对世界说的话。">
+
+  <!-- 衬线标题字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 导航栏 ========== -->
+  <nav class="site-nav">
+    <div class="container">
+      <a class="nav-logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2 19 13 30 16 19 19 16 30 13 19 2 16 13 13Z" fill="#3498DB"/>
+        </svg>
+        <span data-site-text="name">青聪泉画作展</span>
+      </a>
+      <button class="nav-toggle" aria-label="打开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="is-active">首页</a></li>
+        <li><a href="gallery.html">画廊</a></li>
+        <li><a href="about.html">关于</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== Hero 区域 ========== -->
+    <header class="hero">
+      <div class="hero-inner">
+        <h1 class="reveal" data-site-text="slogan">每一笔，都是星星的语言</h1>
+        <p class="lead reveal">这里展出上海青聪泉自闭症儿童的绘画作品。他们或许不善言辞，却用色彩和线条，认真地讲述着自己眼中的世界。</p>
+        <div class="reveal">
+          <a class="btn btn--primary" href="gallery.html">进入画廊</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== 精选作品 ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>精选作品</h2>
+          <p>从孩子们的画作中精心挑选的几幅，邀你慢慢看</p>
+        </div>
+        <!-- 画作卡片由 main.js 动态填充 -->
+        <div class="card-grid" id="featured-grid">
+          <p class="state-msg">正在加载作品…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 机构简介 ========== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="intro-block">
+          <div class="section-head">
+            <h2>关于青聪泉</h2>
+          </div>
+          <p>青聪泉是一家专注于自闭症儿童康复与教育的公益机构。十多年来，我们用专业的训练和温暖的艺术课程，陪伴着「来自星星的孩子」们认识世界、表达自己。</p>
+          <a class="btn btn--ghost" href="about.html">了解更多</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 data-site-text="name">青聪泉画作展</h3>
+          <p data-site-text="slogan">每一笔，都是星星的语言</p>
+        </div>
+        <div class="footer-col">
+          <h3>浏览</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="gallery.html">画廊</a></li>
+            <li><a href="about.html">关于我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>联系我们</h3>
+          <p>邮箱：<a href="mailto:info@qcq.org.cn" data-site-text="contact.email" data-site-mailto="contact.email">info@qcq.org.cn</a></p>
+          <p>电话：<span data-site-text="contact.phone">021-5888-XXXX</span></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 上海市青聪泉儿童智能训练中心 · 由青聪泉志愿者团队搭建</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- Netlify Identity：让老师通过邀请邮件登录管理后台 -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // 老师点击邀请/找回密码邮件里的链接时，登录成功后自动跳转到后台
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function () {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

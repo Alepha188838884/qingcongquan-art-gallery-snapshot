@@ -1,0 +1,99 @@
+# ============================================================
+# Decap CMS 配置 —— 青聪泉画作展内容管理后台
+# 老师在 /admin 页面登录后，依据此配置编辑画作数据。
+# ============================================================
+
+# 身份与仓库后端：通过 Netlify Identity + Git Gateway 提交改动
+backend:
+  name: git-gateway
+  branch: main
+
+# 后台界面语言：简体中文
+locale: "zh_Hans"
+
+# 网站地址（后台界面里的「查看网站」链接）
+site_url: https://qingcongquan-art-gallery.netlify.app
+
+# 老师上传的图片会保存到这个目录
+media_folder: "images/artworks"
+# 图片在网页中引用时的路径（根相对路径）
+public_folder: "/images/artworks"
+
+collections:
+  # 全站数据集中在一个文件 data/artworks.json 中管理
+  - name: "data"
+    label: "网站内容"
+    files:
+      - name: "artworks"
+        label: "画作与机构信息"
+        file: "data/artworks.json"
+        description: "在这里管理所有画作、作品分类和机构信息。修改后点击「发布」即可更新网站。"
+        fields:
+          # ---------- 画作列表 ----------
+          - name: "artworks"
+            label: "画作列表"
+            label_singular: "一幅画作"
+            widget: "list"
+            # 新增的画作插入到列表顶部，老师无需滚动到最底部即可填写
+            add_to_top: true
+            summary: "{{fields.title}} —— {{fields.artist}}"
+            fields:
+              - name: "id"
+                label: "编号"
+                hint: "每幅画一个不重复的数字，新增时填一个比现有最大编号大 1 的数即可。"
+                widget: "number"
+                value_type: "int"
+              - { name: "title", label: "作品名称", widget: "string" }
+              - { name: "artist", label: "小画家姓名", widget: "string" }
+              - { name: "artistAge", label: "小画家年龄", widget: "number", value_type: "int" }
+              - name: "artistBio"
+                label: "小画家简介"
+                hint: "一两句话介绍这个孩子，会显示在画作详情页。"
+                widget: "text"
+                required: false
+              - name: "artistAvatar"
+                label: "小画家头像（可选）"
+                hint: "不上传也可以，详情页会自动用姓名首字显示。"
+                widget: "image"
+                required: false
+              - name: "image"
+                label: "画作图片"
+                hint: "上传孩子的画作照片，建议清晰、裁掉多余边框。"
+                widget: "image"
+              - name: "category"
+                label: "作品分类"
+                hint: "从固定的分类里选一个；画廊页的筛选按钮会自动按实际用到的分类生成。如需新增分类，请联系网站维护者。"
+                widget: "select"
+                options: ["水彩", "油画", "蜡笔画", "彩铅", "丙烯画", "手工", "综合材料"]
+              - name: "date"
+                label: "创作年月（可选）"
+                hint: "可不填。若填写请按「年-月」格式，例如 2025-03。"
+                widget: "string"
+                required: false
+                pattern: ["^[0-9]{4}-[0-9]{2}$", "格式不对，请填写如 2025-03"]
+              - name: "description"
+                label: "创作故事（可选）"
+                hint: "可不填。一段温暖的文字，介绍这幅画的创作背景。"
+                widget: "text"
+                required: false
+              - name: "featured"
+                label: "设为首页精选"
+                hint: "勾选后，这幅画会出现在网站首页的「精选作品」里。"
+                widget: "boolean"
+                default: false
+
+          # ---------- 机构信息 ----------
+          - name: "siteInfo"
+            label: "机构信息"
+            widget: "object"
+            fields:
+              - { name: "name", label: "网站名称", widget: "string" }
+              - { name: "slogan", label: "网站标语", widget: "string" }
+              - { name: "description", label: "机构介绍", widget: "text" }
+              - name: "contact"
+                label: "联系方式"
+                widget: "object"
+                fields:
+                  - { name: "address", label: "地址", widget: "string" }
+                  - { name: "phone", label: "电话", widget: "string" }
+                  - { name: "email", label: "邮箱", widget: "string" }

@@ -1,0 +1,8 @@
+# 系统文件
+.DS_Store
+
+# Netlify CLI 本地状态
+.netlify/
+
+# 依赖目录（本项目无需，预防误提交）
+node_modules/

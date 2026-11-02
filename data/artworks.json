@@ -1,0 +1,77 @@
+{
+  "artworks": [
+    {
+      "artist": "佑泽",
+      "featured": true,
+      "date": "2026-06",
+      "artistAge": 8,
+      "title": "彩霞",
+      "id": 1,
+      "image": "/images/artworks/1.jpg",
+      "description": "澄澈的碧空中，交织着绚烂的漫天彩霞。几只白色鸟儿悠然飞舞，浓烈斑斓的色块，把孩子心中的漫天霞光，静静封存于画布之上。",
+      "category": "油画"
+    },
+    {
+      "artist": "天霖",
+      "featured": true,
+      "date": "2026-06",
+      "artistAge": 16,
+      "title": "湖畔星夜",
+      "id": 2,
+      "image": "/images/artworks/2.jpg",
+      "description": "深浅紫蓝晕染出静谧夜空，一道星云散落其中，岸边浓绿树林在湖面落下倒影。星星孩子笔下宁静的湖畔夜色，让人心驰神往。",
+      "category": "油画"
+    },
+    {
+      "artist": "彦芃",
+      "featured": true,
+      "date": "2026-06",
+      "artistAge": 12,
+      "title": "云朵棉花糖",
+      "id": 3,
+      "image": "/images/artworks/3.jpg",
+      "description": "快看呀！枝头托着一团蓬松的白云，好像一朵大大的棉花糖！星星孩子的想象天马行空，柔软笔触描绘出烂漫的童心。",
+      "category": "油画"
+    },
+    {
+      "artistAvatar": "",
+      "artist": "彦芃",
+      "featured": true,
+      "date": "2026-06",
+      "artistAge": 12,
+      "title": "竹",
+      "id": 4,
+      "image": "/images/artworks/4.jpg",
+      "description": "由深到浅的红色铺底，暖黄色颜料勾勒出竹干与竹叶，配色热烈别致。挺拔的竹节和舒展的竹叶，藏着星星孩子心里坚韧又温暖的小美好。",
+      "category": "油画"
+    },
+    {
+      "artist": "一鸣",
+      "featured": true,
+      "date": "2026-04",
+      "artistAge": 15,
+      "title": "玉兰",
+      "id": 5,
+      "image": "/images/artworks/微信图片_20260318143333_3351_26.jpg",
+      "description": "《玉兰》\n\n诗画作者：青聪泉ECTA学员 一鸣 16岁 \n\n花开草木同春盛\n树高枝壮绿影重\n海上望潮空对月\n孤帆远行水云中",
+      "category": "水彩"
+    }
+  ],
+  "categories": [
+    "水彩",
+    "油画",
+    "蜡笔画",
+    "彩铅",
+    "丙烯画"
+  ],
+  "siteInfo": {
+    "name": "青聪泉孤独症儿童艺术展",
+    "slogan": "每一笔，都是星星的语言",
+    "description": "上海市青聪泉儿童智能训练中心成立于 2004 年，是一家专注于自闭症儿童康复与教育的公益机构。二十多年来，我们陪伴着一个又一个「来自星星的孩子」，用专业的康复训练和温暖的艺术课程，帮助他们认识世界、表达自己。绘画是孩子们重要的语言之一——这个展览，就是他们想对世界说的话。",
+    "contact": {
+      "address": "上海青聪泉儿童智能训练中心",
+      "phone": "021-62348556",
+      "email": "qingcongquan@qingcongquan.org.cn"
+    }
+  }
+}
